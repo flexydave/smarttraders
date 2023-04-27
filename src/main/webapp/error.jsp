@@ -13,6 +13,10 @@
     <link rel="stylesheet" href="login.css">
     <title>error</title>
 </head>
+
+
+
+
 <style>
     .container{ 
         height: 100vh;
@@ -45,7 +49,7 @@
             <img src="images/img14.png" alt="img">
             <form>
                 <div class="header">
-                    <h1>registration successful!</h1>
+                    <h1> <%=request.getAttribute("err").toString(); %></h1>
                 </div>
             </form>
         </div>

@@ -8,6 +8,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.RequestDispatcher;
 
 @WebServlet(name = "RegisterServlet", urlPatterns = {"/register"})
 public class RegisterServlet extends HttpServlet {
@@ -22,17 +23,15 @@ public class RegisterServlet extends HttpServlet {
             String email = request.getParameter("email");
             String pnum = request.getParameter("pnum");
             String pword = AES.encrypt(request.getParameter("pword"), "1234");
-            
             RegisterDao dao = new RegisterDao();
             
+            RequestDispatcher rd = request.getRequestDispatcher("error.jsp");
+            rd.forward(request, response);
             if(dao.submitData(fname, username, email, pnum, pword)){
-     
-                    response.sendRedirect("error.jsp");
-                 
-                
-            }else{ 
-                    response.sendRedirect("error.jsp");
-              
+                    request.setAttribute("err", "registration successful!");
+            }
+            else{
+                    request.setAttribute("err", "registration unsuccessful!");    
             }
             
             
