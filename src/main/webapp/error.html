@@ -8,8 +8,23 @@
     <link rel="stylesheet" href="privacy.css">
     <link rel="stylesheet" href="bootstrap-icons/bootstrap-icons.css">
     <link rel="stylesheet" href="login.css">
-    <title>login</title>
+    <title>error</title>
 </head>
+<style>
+    .container{ 
+        height: 100vh;
+    }
+
+    .container > .flex > form > .header > h1{ 
+        font-size: 2rem;
+        text-transform: uppercase;
+    }
+    .container > .flex > form > .header{ 
+        position: relative;
+        top: 30%;
+        width: 100%;
+    }
+</style>
 <body>
     <div class="container">
         <section class="home">
@@ -25,39 +40,10 @@
         <img src="images/img16.png" alt="img">
         <div class="flex">
             <img src="images/img14.png" alt="img">
-            <form action="LoginServlet">
+            <form>
                 <div class="header">
-                    <h1>welcome back!</h1>
+                    <h1>registration successful!</h1>
                 </div>
-                <div class="flex">
-                    <div class="mini">
-                        <label for="email">email address*</label>
-                    </div>
-                    <div class="mini">
-                        <input type="email" name="email" required>
-                    </div>
-                </div>
-    
-                <div class="flex">
-                    <div class="mini">
-                        <label for="pass">password*</label>
-                    </div>
-                    <div class="mini">
-                        <input type="password" name="pass" id="pass" required>
-                        <span class="bi bi-eye-fill" id="icon"></span>
-                    </div>
-                </div>
-                <div class="flex">
-                    <div class="mini">
-                        <input type="submit" value="Sign In">
-                    </div>
-                </div>
-                <div class="header">
-                    <p>don't have an account? <a href="register.html">Sign Up</a></p>
-                    <p><a href="recover-password.html">forget password?</a></p>
-                </div>
-    
-    
             </form>
         </div>
        

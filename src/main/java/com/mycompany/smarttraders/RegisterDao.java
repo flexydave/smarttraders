@@ -26,7 +26,7 @@ public class RegisterDao {
     boolean submitData(String fname, String fullname, String email, String pnum, String pword){  
         try{ 
             connect();
-            String query = "insert into customerCredentials(fname,fullname,email,pnum,pword) values(?,?,?,?,?)";
+            String query = "insert into customerCredentials(uname,fullname,email,pnum,pword) values(?,?,?,?,?)";
             PreparedStatement st = conn.prepareStatement(query);
             st.setString(1, fname);
             st.setString(2, fullname);

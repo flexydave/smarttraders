@@ -27,11 +27,11 @@ public class RegisterServlet extends HttpServlet {
             
             if(dao.submitData(fname, username, email, pnum, pword)){
      
-                    out.println("Registration Successful");
+                    response.sendRedirect("error.jsp");
                  
                 
             }else{ 
-                    out.println("Registration Unsuccessful");
+                    response.sendRedirect("error.jsp");
               
             }
             
