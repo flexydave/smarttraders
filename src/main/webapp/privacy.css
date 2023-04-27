@@ -1,0 +1,54 @@
+.container{ 
+    background-color: aliceblue;
+   
+}
+.container > .home{ 
+    height: auto;
+    padding: 0;
+}
+main{ 
+    padding: 0% 5%;
+    font-size: 16px;
+    width: 100%;
+    margin: 0 auto;
+}
+main > .mini{
+    margin: 3% 0;
+    text-align:justify;
+}
+
+main > .mini > ul{
+    margin: 3% 0;
+    padding: 0 2%;
+}
+main > .mini > ul > li{ 
+    padding: 2% 0;
+}
+.container > .home{ 
+    background: none;
+    
+    
+}
+.container > .home > nav > .mini > ul > li > a{ 
+    color: black;
+    
+}
+.container > .home > nav > .mini > p > a{ 
+    color: black;
+}
+.bi-list, .bi-x{ 
+    color: black;
+}
+main > h1{ 
+    text-transform: capitalize;
+}
+
+.container > .home > nav > .mini > p > a{ 
+    color: black;
+}
+
+@media screen and (max-width:880px){ 
+    main > .mini{ 
+        margin: 15% 0;
+    }
+}

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../bootstrap-icons/bootstrap-icons.css">
+    <link rel="stylesheet" href="../dashboard/dash.css">
+    <link rel="stylesheet" href="../settings/index.css">
+    <title>security</title>
+</head>
+<style>
+    main{ 
+        height: 100vh;
+    }
+    .profile{ 
+        width: 70%;
+        
+    }
+    .profile > .flex > .mini > p > span{ 
+        left: 150px;
+        right: 0;
+        color: greenyellow;
+    }
+    .profile > .flex > .mini{ 
+        padding: 0 15px;
+    }
+    .profile > .flex > .mini > p{ 
+        left: 0;
+    }
+
+    .cover{ 
+        position: absolute;
+        width: 100%;
+        height: 800px;
+        z-index: 1;
+        display: none;
+        background: linear-gradient(to right bottom, rgba(0,0,0,0.34), rgba(0,0,0,0.3));
+        overflow: hidden;
+    }
+    .pop-up{ 
+        width: 30%;
+        
+        background-color: white;
+        border-radius: 10px;
+        position: fixed;
+        z-index: 1;
+        top: 20%;
+        left: 40%;
+        box-shadow: 0 3px 7px rgb(216, 208, 208);
+        animation: scroll 1s 1 linear;
+        display: none;
+        justify-content: center;
+        padding: 2%;
+        text-transform: capitalize;
+    }
+    .pop-up > .mini{ 
+        display: grid;
+        margin: 5% auto;
+    }
+    .pop-up > .mini > input,select{ 
+        padding: 10px;
+        outline: none;
+        width: 100%;
+        margin: 0 auto;
+    }
+    .pop-up > .mini > input[type="submit"]{ 
+        text-align: center;
+        width: 50%;
+        color: white;
+        background-color: green;
+        border: none;
+        cursor: pointer;
+    }
+    .pop-up > .mini > label{ 
+        padding: 10px 0;
+        text-transform: capitalize;
+    }
+    @keyframes scroll {
+        0%{ 
+            left: -100%;
+        }
+        25%{ 
+            left: 50%;
+        }
+        50%{ 
+            left: 30% ;
+        }
+        100%{ 
+            left: 40%;
+        }
+    }
+    @media all and (max-width:880px){ 
+        .profile{ 
+            width: 100%;
+        }
+        .pop-up{ 
+            width: 90%;
+            left: 5%;
+            animation: none;
+        }
+    }
+</style>
+<body>
+    <div class="container" id="cont">
+        <nav class="top-nav" id="topNav">
+            <span class="bi bi-list" id="showNav"></span>
+            <h1> <span class="bi bi-bell-fill showNoti" id="showNoti"> <div id="notification">0<sup></sup></div></span> david attah</h1>
+            <div class="notifications" id="noti">
+                <header>notifications</header> 
+                <p><span class="bi bi-trash-fill"></span> <br> no new items</p>
+                
+            </div>
+        </nav>
+        <div class="side-nav" id="sideNav">
+            <header>smart traders</header>
+            <ul>
+                <li ><a href="../dashboard/index.html"><span class="bi bi-grid"></span> dashboard</a></li>
+                <li><a href="../transactions/index.html"><span class="bi bi-graph-up"></span> transactions</a></li>
+                <li><a href="../products/index.html"><span class="bi bi-cart-fill"></span> products</a></li>
+                <li style="background-color: rgb(118, 192, 118);" ><a href="../settings/index.html"style="color: white;"><span class="bi bi-plug"></span> settings</a></li>
+            </ul>
+        </div>
+        <main>
+           
+            <div class="profile">
+                <div class="flex">
+                    <div class="mini navigate">
+                        <p>reset password</p>
+                        <span class="bi bi-chevron-right"></span>
+          
+                    </div>
+                    <div class="mini navigate">
+                        <p>change transaction pin <span class="bi bi-info-circle"></span></p>
+                        <span class="bi bi-chevron-right"></span>
+          
+                    </div>
+                    <div class="mini navigate">
+                        <p></span>reset transaction pin <span class="bi bi-info-circle"></span></p>
+                        <span class="bi bi-chevron-right"></span>
+                    </div> 
+                    
+                </div>
+            </div>
+        </main>
+    </div>
+    <div class="cover" id="pop1" onclick="toNormal()">
+    </div>
+    <div class="pop-up" id="pop2">
+        <p style="font-weight: bold;">change pin</p>
+        <div class="mini">
+            <label for="account">old pin</label>
+            <input type="text" placeholder="" value="" id="accNum">
+        </div>
+        <div class="mini">
+            <label for="account">new pin</label>
+            <input type="text" value="" id="accName">
+        </div>
+        <div class="mini">
+            <input type="submit" value="proceed" onclick="addBeneficiary()">
+        </div>
+    </div>
+</body>
+<script>
+       var naviagte = document.getElementsByClassName("navigate");
+    var arrLinks = ["../settings/account.html", "../settings/security.html"];
+    function navigateTo(){ 
+                naviagte[0].addEventListener("click", function(){ 
+                    document.location = "../recover-password.html";
+                }) 
+                naviagte[1].addEventListener("click", function(){ 
+                    display();
+                }) 
+                naviagte[2].addEventListener("click", function(){ 
+                    display();
+                })   
+
+    }
+    navigateTo();
+
+    var cont = document.getElementById("cont");
+    var pop1 = document.getElementById("pop1");
+    var pop2 = document.getElementById("pop2");
+
+    function toNormal(){ 
+        // document.write("hello world")
+        pop1.style.display = "none";
+        pop2.style.display = "none";
+        cont.style.filter = "blur(0px)";
+      }
+      function display() {
+            pop1.style.display = "block";
+            pop2.style.display = "block";
+            cont.style.filter = "blur(5px)";
+      }
+</script>
+<script src="../dashboard/dash.js"></script>
+</html>

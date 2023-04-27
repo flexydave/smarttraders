@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../bootstrap-icons/bootstrap-icons.css">
+    <link rel="stylesheet" href="../dashboard/dash.css">
+    <title>transactions</title>
+    <style>
+        main{ 
+            height: 100vh;
+        }
+        main > input{ 
+            
+            width: 100%;
+            margin: 5% auto;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid grey;
+            outline: none;
+            font-size: 18px;
+        }
+        main > input:focus{ 
+            
+            border: 1px solid green;
+        }
+        main > input::placeholder{ 
+            font-weight: bold;
+            font-size: 15px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="top-nav" id="topNav">
+            <span class="bi bi-list" id="showNav"></span>
+            <h1> <span class="bi bi-bell-fill showNoti" id="showNoti"> <div id="notification">0<sup></sup></div></span> david attah</h1>
+            <div class="notifications" id="noti">
+                <header>notifications</header> 
+                <p><span class="bi bi-trash-fill"></span> <br> no new items</p>
+                
+            </div>
+        </nav>
+        <div class="side-nav" id="sideNav">
+            <header>smart traders</header>
+            <ul>
+                <li ><a href="../dashboard/index.html"><span class="bi bi-grid"></span> dashboard</a></li>
+                <li style="background-color: rgb(118, 192, 118);"><a href="transactions.html" style="color: white;"><span class="bi bi-graph-up"></span> transactions</a></li>
+                <li><a href="../products/index.html"><span class="bi bi-cart-fill"></span> products</a></li>
+                <li><a href="../settings/index.html"><span class="bi bi-plug"></span> settings</a></li>
+            </ul>
+        </div>
+        <main>
+            <h1>TRANSACTIONS</h1>
+            <input type="text" placeholder="Search by ID, Type, Status" value="" id="input">
+
+            <div class="table">
+                <table>
+                    <tr>
+                        <th>transaction iD</th>
+                        <th>type</th>
+                        <th>status</th>
+                        <th>amount</th>
+                        <th>date</th>
+                        <th>action</th>
+                    </tr>
+                    <tr>
+                        <td>CRYPTO-1</td>
+                        <td style="color:blue; font-weight: bold;">PAYPAL</td>
+                        <td style="color:red; font-weight: bold;">FAILED</td>
+                        <td>₦ 100</td>
+                        <td>February 4th, 2023 || 11:40 AM</td>
+                        <td><span class="bi bi-info-circle"></span></td>
+                    </tr>          
+                    <tr>
+                        <td>CRYPTO-2</td>
+                        <td style="color:blue; font-weight: bold;">ZELLE</td>
+                        <td style="color:green; font-weight: bold;">SUCCESSFUL</td>
+                        <td>₦ 200</td>
+                        <td>February 4th, 2023 || 11:40 AM</td>
+                        <td><span class="bi bi-info-circle"></span></td>
+                    </tr> 
+                    <tr>
+                        <td>CRYPTO-3</td>
+                        <td style="color:blue; font-weight: bold;">AMAZON</td>
+                        <td style="color:greenyellow; font-weight: bold;">ALMOST</td>
+                        <td>₦ 300</td>
+                        <td>February 4th, 2023 || 11:40 AM</td>
+                        <td><span class="bi bi-info-circle" ></span></td>
+                    </tr>  
+                    <tr>
+                        <td>CRYPTO-4</td>
+                        <td style="color:blue; font-weight: bold;">GIFTCARDS</td>
+                        <td style="color:red; font-weight: bold;">FAILED</td>
+                        <td>₦ 300</td>
+                        <td>February 4th, 2023 || 11:40 AM</td>
+                        <td><span class="bi bi-info-circle"></span></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="no-data" id="noData">
+                <p><span class="bi bi-inbox"></span> <br> no data  </p>
+                
+            </div>
+            <!-- <div class="accordion">
+                <button><span class="bi bi-chevron-left"></span></button>  
+                <button>1</button>  
+                <button><span class="bi bi-chevron-right"></span></button>  
+            </div> -->
+              
+        </main>
+    </div>
+    <script>
+
+        // search for data in the transacction table
+        var getInput = document.getElementById("input");
+        var getTR = document.getElementsByTagName("tr");
+        var noData = document.getElementById("noData");
+        getInput.addEventListener("input", function(){ 
+            var i,j,l;
+            var arr = [];
+            l = 0;
+            var a = getInput.value.toLocaleLowerCase();
+            for( i = 1; i < getTR.length; ++i){ 
+                for( j = 0; j < getTR[i].children.length; ++j){ 
+                    if(a == getTR[i].children[j].innerHTML.substring(0, a.length).toLocaleLowerCase()){
+                        arr[l] = i; 
+                        ++l;
+                    }
+                }   
+            }
+            for(var m = 1; m < getTR.length; ++m){ 
+
+                getTR[m].style.display = "none"
+                noData.style.display = "block";
+            }
+           for(var m = 0; m < arr.length; ++m){ 
+
+                getTR[arr[m]].style.display = "table-row"
+                noData.style.display = "none";
+                
+           }
+        })
+    </script>
+    <script src="../dashboard/dash.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../bootstrap-icons/bootstrap-icons.css">
+    <link rel="stylesheet" href="../dashboard/dash.css">
+    <title>giftcards</title>
+    <style>
+       .container > main { 
+            height: auto;
+            /* padding: 2% 9%; */
+            
+        }
+        main > p{ 
+                font-size:18px;
+                text-align: center;
+                color:gray;
+            }
+        input{ 
+            text-align: center;
+            width: 80%;
+            margin: 0 auto;
+            padding: 10px;
+            outline: none;
+            font-size:18px;
+            border-radius: 5px;
+            position: relative;
+            left: 10%;
+            text-transform: capitalize;
+            border: 1px solid black;
+        }
+        main > .flex { 
+            display: block;
+            width: 100%;
+            margin: 5% 10%;
+        }
+        main > .flex > .giftcard > .mini > img{ 
+            width: 150px;
+            padding: 0;
+            border-radius: 0;
+            background-color: transparent;
+            position: relative;
+            top: 0;
+            
+        }
+        main > .flex > .giftcard > .mini > p{ 
+            position: relative;
+            top: -10px;
+        }
+        main > .flex > .giftcard{ 
+            background-color: transparent;
+            width: fit-content;
+            text-align: center;
+            float: left;
+            margin: 0 2%;
+            
+        }
+
+        main > .flex > .giftcard > .mini{ 
+            cursor: pointer;
+            /* margin: 0 5%; */
+            width: 100%;
+            text-transform: capitalize;
+            font-weight: bold;
+            font-size: 16px;
+        }
+       
+        @media all and (max-width:880px){ 
+            main > .flex > .giftcard > .mini > img{ 
+                width: 150px;
+            }
+           
+            main > .flex > .giftcard > .mini{ 
+                width: fit-content;
+                
+            }
+            /* main > .flex{ 
+                flex-direction: column;
+            } */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="top-nav" id="topNav">
+            <span class="bi bi-list" id="showNav"></span>
+            <span class="bi bi-moon-fill"></span>
+            <h1> <span class="bi bi-bell-fill showNoti" id="showNoti"> <div id="notification">0<sup></sup></div></span> david attah</h1>
+            <div class="notifications" id="noti">
+                <header>notifications</header> 
+                <p><span class="bi bi-trash-fill"></span> <br> no new items</p>
+                
+            </div>
+        </nav>
+        <div class="side-nav" id="sideNav">
+            <header>smart traders</header>
+            <ul>
+                <li ><a href="../dashboard/index.html"><span class="bi bi-grid"></span> dashboard</a></li>
+                <li><a href="../transactions/index.html"><span class="bi bi-graph-up"></span> transactions</a></li>
+                <li  style="background-color: rgb(118, 192, 118);"><a href="products.html"  style="color: white;"><span class="bi bi-cart-fill"></span> products</a></li>
+                <li><a href="../settings/index.html"><span class="bi bi-plug"></span> settings</a></li>
+            </ul>
+        </div>
+        <main>
+            <h1>what giftcard do you want to sell?</h1>
+            <p>select the giftcards that you would like to sell</p>
+            <input type="text" placeholder="search giftcards...." id="input">
+
+            <div class="flex">
+                <div class="giftcard">
+                    <div class="mini">
+                        <img src="../images/amazon.png" alt="" srcset="">
+                        <p>amazon</p>
+                    </div>
+                    <div class="mini">
+                        <img src="../images/apple.png" alt="" srcset="">
+                        <p>usa apple store</p>
+                    </div>
+                </div>
+                <div class="giftcard">
+                    <div class="mini">
+                        <img src="../images/nike.png" alt="" srcset="">
+                        <p>nike</p>
+                    </div>
+                    <div class="mini">
+                        <img src="../images/itune.png" alt="" srcset="">
+                        <p>itunes</p>
+                    </div>
+                </div>
+
+                <div class="giftcard">
+                    <div class="mini">
+                        <img src="../images/nord.png" alt="" srcset="">
+                        <p>nordstorm</p>
+                    </div>
+               
+                    <div class="mini">
+                        <img src="../images/sephora.png" alt="" srcset="">
+                        <p>sephora</p>
+                    </div>
+                </div>
+                
+                <div class="giftcard">
+                    <div class="mini">
+                        <img src="../images/steam.png" alt="" srcset="">
+                        <p>steam</p>
+                    </div>
+                    <div class="mini">
+                        <img src="../images/google.png" alt="" srcset="">
+                        <p>google play</p>
+                    </div>
+                </div>
+                
+                <div class="giftcard">
+                    <div class="mini">
+                        <img src="../images/ebay.png" alt="" srcset="">
+                        <p>ebay</p>
+                    </div>
+                    <div class="mini">
+                        <img src="../images/foot.png" alt="" srcset="">
+                        <p>foot locker</p>
+                    </div>
+                </div>
+                
+                <div class="giftcard">
+                    <div class="mini">
+                        <img src="../images/walmart.png" alt="" srcset="">
+                        <p>walmart</p>
+                    </div>
+                    <div class="mini">
+                        <img src="../images/vanilla.png" alt="" srcset="">
+                        <p>vanilla</p>
+                    </div>
+                </div>
+                
+                <div class="giftcard">
+                    <div class="mini">
+                        <img src="../images/ae.png" alt="" srcset="">
+                        <p>american express</p>
+                    </div>
+                    <div class="mini">
+                        <img src="../images/visa.png" alt="" srcset="">
+                        <p>visa</p>
+                    </div>
+                </div>
+                <div class="giftcard">
+                    <div class="mini">
+                        <img src="../images/target.png" alt="" srcset="">
+                        <p>target </p>
+                    </div>
+                
+                </div>
+                     
+                 
+         </div>
+        </main>
+    </div>
+</body>
+<script>
+
+    // search for data in the transacction table
+    var getInput = document.getElementById("input");
+    
+    getInput.addEventListener("input", function(){ 
+        var mini = document.getElementsByClassName("mini");
+        var i,j,l;
+        var arr = [];
+        l = 0;
+        var a = getInput.value.toLocaleLowerCase();
+        for( i = 0; i < mini.length; ++i){ 
+            for( j = 1; j < mini[i].children.length; ++j){ 
+                if(a == mini[i].children[j].innerHTML.substring(0, a.length).toLocaleLowerCase()){
+                    arr[l] = i; 
+                    ++l;
+                }
+            }   
+        }
+        for(var m = 0; m < mini.length; ++m){ 
+            mini[m].style.display = "none"
+        }
+       for(var m = 0; m < arr.length; ++m){ 
+            mini[arr[m]].style.display = "block"    
+       }
+    })
+</script>
+<script src="../dashboard/dash.js"></script>
+</html>

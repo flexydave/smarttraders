@@ -1,0 +1,72 @@
+.profile{ 
+    width: 50%;
+    margin: 0 auto;
+    background-color: white ;
+    text-align: center;
+    padding: 40px 20px;
+    border-radius: 15px;
+    box-shadow: 0 3px 10px rgb(216, 208, 208);
+}
+.profile > .profName > p{ 
+    text-transform: capitalize  ;
+    position: relative;
+    top: 15px;
+    font-weight: 500;
+}
+.profile > .profName > span{ 
+   padding: 19px;
+    margin: 0 auto;
+    background-color: rgb(43, 174, 226);
+    border-radius: 100%;
+    text-transform: uppercase;
+    position: unset;
+    font-weight: bold;
+    color: white;
+}
+.profile > .flex { 
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    top: 40px;
+}
+.profile > .flex > .mini{ 
+    background-color: white;
+    border: 3px solid rgb(236, 236, 236);
+    width: 80%;
+    margin: 7% auto;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    cursor: pointer;
+}
+.profile > .flex > .mini:hover{ 
+    width: 85%;
+}
+.profile > .flex > .mini > p{ 
+    text-transform: capitalize;
+    font-weight: 500;
+    font-size: small;
+    position: relative;
+    left: 30px;
+}
+.profile > .flex > .mini > span{ 
+    font-size: small;
+    position: absolute;
+    top: 15px;
+    right: 10px;
+}
+.profile > .flex > .mini > p > span{ 
+    font-size: 18px;
+    position: absolute;
+    left: -25px;
+    top: -3px;
+    color: chocolate;
+}
+@media all and (max-width:880px){ 
+
+    .profile{ 
+        width: 100%;
+    }
+
+}

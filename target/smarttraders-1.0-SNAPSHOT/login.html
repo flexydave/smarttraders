@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="privacy.css">
+    <link rel="stylesheet" href="bootstrap-icons/bootstrap-icons.css">
+    <link rel="stylesheet" href="login.css">
+    <title>login</title>
+</head>
+<body>
+    <div class="container">
+        <section class="home">
+            <nav>
+                <div class="mini">
+                    <p><a href="index.html">SMART TRADERS</a></p>
+                </div>
+            </nav>
+        </section>
+
+       
+        <img src="images/img15.png" alt="img">
+        <img src="images/img16.png" alt="img">
+        <div class="flex">
+            <img src="images/img14.png" alt="img">
+            <form action="./dashboard/index.html">
+                <div class="header">
+                    <h1>welcome back!</h1>
+                </div>
+                <div class="flex">
+                    <div class="mini">
+                        <label for="email">email address*</label>
+                    </div>
+                    <div class="mini">
+                        <input type="email" name="email" required>
+                    </div>
+                </div>
+    
+                <div class="flex">
+                    <div class="mini">
+                        <label for="pass">password*</label>
+                    </div>
+                    <div class="mini">
+                        <input type="password" name="pass" id="pass" required>
+                        <span class="bi bi-eye-fill" id="icon"></span>
+                    </div>
+                </div>
+                <div class="flex">
+                    <div class="mini">
+                        <input type="submit" value="Sign In">
+                    </div>
+                </div>
+                <div class="header">
+                    <p>don't have an account? <a href="register.html">Sign Up</a></p>
+                    <p><a href="forget.html">forget password?</a></p>
+                </div>
+    
+    
+            </form>
+        </div>
+       
+    </div>
+</body>
+<script>
+    var getIcon = document.getElementById("icon");
+    var getInput = document.getElementById("pass")
+    getIcon.addEventListener("click", function(){ 
+        if(this.className == "bi-eye-fill"){ 
+            this.className = "bi-eye-slash-fill"
+            getInput.type = "password"
+        }else{ 
+            this.className = "bi-eye-fill"
+            getInput.type = "text"
+        }
+    })
+</script>
+</html>

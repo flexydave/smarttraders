@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../bootstrap-icons/bootstrap-icons.css">
+    <link rel="stylesheet" href="../dashboard/dash.css">
+    <title>account</title>
+</head>
+<style>
+    .container{ 
+        /* filter: blur(5px); */
+        
+    }
+    main { 
+        width: 100%;
+    }
+    main > section{ 
+        width: 100%;
+        margin: 0 auto;
+        background-color: white;
+        padding: 0% 5%;
+        height: 100vh;
+    }   
+    main > section > header{ 
+        display: flex;
+        text-transform: capitalize;
+        border-bottom: 1px solid whitesmoke;
+        position: relative;
+    }
+    main > section > header > p{ 
+        padding: 0 50px 0 0;
+        cursor: pointer;
+    }
+    main > section > header > p:hover{ 
+        color: green;
+    }
+    main > section > header > span{ 
+        /* border-bottom: 2px solid green; */
+        height: 2px;
+        position: absolute;
+        width: 10%;
+        border-radius: 10px;
+        top: 95%;
+        background-color: green;
+        left: 0;
+    }
+    main > section > .flex{ 
+        width: 100%;
+        text-transform: capitalize;
+        display: flex;
+    }
+    main > section > .flex > .mini{ 
+        width: 100%;
+    }
+    main > section > .flex > .mini > img{ 
+        width: 100px;
+        height: 100px;
+        /* width: 25%;
+        height: 25%; */
+        border-radius: 100%;
+    } 
+    main > section > .flex > .mini > .input{ 
+        position: relative;
+    }
+    main > section > .flex > .mini > .input > span{ 
+        position: absolute;
+        left: 5%;
+        z-index: -1; 
+    }
+    main > section > .flex > .mini > .grid{ 
+        display: grid;
+        margin: 5% 0;
+    }
+    main > section > .flex > .mini > .grid > input{ 
+        padding: 10px;
+        width: 100%;
+        border-radius: 5px;
+        outline: none;
+        border: 1px solid grey;
+    }
+    main > section > .flex > .mini:nth-child(2){ 
+        margin: 10% 0;
+        position: relative;
+        right: 100px;
+    }
+    main > section > .flex > .mini > .grid > input::placeholder{ 
+        text-transform: uppercase;
+    }
+    main > section > .flex > .mini > .grid:nth-child(2) > input::placeholder{ 
+        text-transform: lowercase;
+    }
+    main > section > .flex > .mini > .grid > input[type = "submit"]{ 
+        background-color: grey;
+        border: none;
+        cursor:not-allowed;
+    }
+    main > section > .flex > .mini > .grid > label{ 
+        padding: 10px 0;
+        font-size: small;
+    }
+    main > section > .flex > .mini > .input > input{ 
+        z-index: 1; 
+    }
+
+    main > section > .flex:nth-child(3){ 
+        display: grid;
+        padding: 2%;
+        display: none;
+    }
+    main > section > .flex:nth-child(3)  >header{ 
+        font-weight: bold;
+    }
+    main > section > .flex > .bene-flex{ 
+        width: 100%;
+        display: block;
+        /* display: flex; */
+    }
+   
+    main > section > .prof > .bene-flex> .bene-info{ 
+        border: 1px dashed black;
+        border-radius: 5px;
+        width: 40%;
+        overflow-x: hidden;
+        float: left ;
+        margin: 1%;
+        padding: 10px;
+    }
+    main > section > .prof > .bene-flex> .bene-info > .flex{ 
+        justify-content: space-between;
+        display: flex;
+        width: 100%;
+    }
+    main > section > .prof > .bene-flex> .bene-info > .flex > p{ 
+        padding: 0 10px;
+        font-size: small;
+        font-weight: 500;
+        text-overflow: ellipsis;
+    }
+    main > section > .prof >.bene-flex> .bene-info > .flex > p:nth-child(1){ 
+        color: grey;
+    }
+    main > section > .prof > button{ 
+        margin: 30px 0;
+        padding: 10px;
+        width: 40%;
+        border: none;
+        background-color: green;
+        color: white;
+        font-size: 16px;
+        text-transform: capitalize;
+        cursor: pointer;
+        border-radius: 5px;
+        z-index: 1;
+    }
+    .cover{ 
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        z-index: 1;
+        display: none;
+        background: linear-gradient(to right bottom, rgba(0,0,0,0.34), rgba(0,0,0,0.3));
+    }
+    .pop-up{ 
+        width: 30%;
+        
+        background-color: white;
+        border-radius: 10px;
+        position: fixed;
+        z-index: 1;
+        top: 20%;
+        left: 40%;
+        box-shadow: 0 3px 7px rgb(216, 208, 208);
+        animation: scroll 1s 1 linear;
+        display: none;
+        justify-content: center;
+        padding: 2%;
+        text-transform: capitalize;
+    }
+    .pop-up > .mini{ 
+        display: grid;
+        margin: 5% auto;
+    }
+    .pop-up > .mini > input,select{ 
+        padding: 10px;
+        outline: none;
+        width: 100%;
+        margin: 0 auto;
+    }
+    .pop-up > .mini > input[type="submit"]{ 
+        text-align: center;
+        width: 50%;
+        color: white;
+        background-color: green;
+        border: none;
+        cursor: pointer;
+    }
+    .pop-up > .mini > label{ 
+        padding: 10px 0;
+        text-transform: capitalize;
+    }
+    
+    @keyframes scroll {
+        0%{ 
+            left: -100%;
+        }
+        25%{ 
+            left: 50%;
+        }
+        50%{ 
+            left: 30% ;
+        }
+        100%{ 
+            left: 40%;
+        }
+    }
+
+    @media all and (max-width:880px){ 
+        main > section > .flex{ 
+            flex-direction: column;
+        }
+        main > section > .flex > .mini:nth-child(2){ 
+            position: unset;
+        }
+        main > section > .flex:nth-child(3) > .bene-info{ 
+            width: 100%;
+        }
+        main > section > .flex:nth-child(3) > button{ 
+            width: 100%;
+        }
+        main > section > .prof > .bene-flex> .bene-info{ 
+            width: 100%;
+        }
+        .pop-up{ 
+            width: 90%;
+            left: 5%;
+            animation: none;
+        }
+    }
+   
+
+</style>
+<body>
+    <div class="container" id="cont">
+        <nav class="top-nav" id="topNav">
+            <span class="bi bi-list" id="showNav"></span>
+            <h1> <span class="bi bi-bell-fill showNoti" id="showNoti"> <div id="notification">0<sup></sup></div></span> david attah</h1>
+            <div class="notifications" id="noti">
+                <header>notifications</header> 
+                <p><span class="bi bi-trash-fill"></span> <br> no new items</p>
+                
+            </div>
+        </nav>
+        <div class="side-nav" id="sideNav">
+            <header>smart traders</header>
+            <ul>
+                <li ><a href="../dashboard/index.html"><span class="bi bi-grid"></span> dashboard</a></li>
+                <li><a href="../transactions/index.html"><span class="bi bi-graph-up"></span> transactions</a></li>
+                <li><a href="../products/index.html"><span class="bi bi-cart-fill"></span> products</a></li>
+                <li style="background-color: rgb(118, 192, 118);" ><a href="../settings/index.html"style="color: white;"><span class="bi bi-plug"></span> settings</a></li>
+            </ul>
+        </div>
+
+        <main>
+            <section id="profile">
+                <header>
+                    <p class="nav">profile</p>
+                    <p class="nav">beneficiaries</p>
+                    <span id="move"></span>
+                </header>
+                <div class="flex prof">
+                    <div class="mini">
+                        <p style="font-weight: bold;">edit profile</p>
+                        <img src="../images/img.jpg" alt="image">
+                        <div class="input">
+                        <input type="file">
+                        <span class="bi bi-telephone"></span>
+                        </div>
+                        
+                    </div>
+                    <div class="mini">
+                        <div class="grid">
+                            <label for="name">full name</label>
+                            <input type="text" placeholder="david attah" required>
+                        </div>
+                        <div class="grid">
+                            <label for="name">email address</label>
+                            <input type="text" placeholder="davidattah748@gmail.com" required>
+                        </div>
+                        <div class="grid">
+                            <label for="name">phone number</label>
+                            <input type="tel" placeholder="07062829938" required>
+                        </div>
+                        <div class="grid">
+                            <input type="submit" value="save" disabled>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex prof">
+                    <header><p>saved beneficiaries</p></header>
+                    <div class="bene-flex" id="addBene">
+                        
+                    </div>
+                
+                        <button id="add" onclick="display()">add beneficary <span class="bi bi-plus-lg"></span></button>
+                </div>
+            </section>
+        </main>
+    </div>
+        <div class="cover" id="pop1" onclick="toNormal()">
+        </div>
+        <div class="pop-up" id="pop2">
+            <p>add beneficiary</p>
+            <div class="mini">
+                <select class="form-field" id="banks" value="" ><option value="">-- Select Bank --</option><option value="120001">9mobile 9Payment Service Bank</option><option value="801">Abbey Mortgage Bank</option><option value="51204">Above Only MFB</option><option value="51312">Abulesoro MFB</option><option value="044">Access Bank</option><option value="063">Access Bank (Diamond)</option><option value="602">Accion Microfinance Bank</option><option value="50036">Ahmadu Bello University Microfinance Bank</option><option value="120004">Airtel Smartcash PSB</option><option value="035A">ALAT by WEMA</option><option value="50926">Amju Unique MFB</option><option value="50083">Aramoko MFB</option><option value="401">ASO Savings and Loans</option><option value="MFB50094">Astrapolaris MFB LTD</option><option value="51229">Bainescredit MFB</option><option value="50931">Bowen Microfinance Bank</option><option value="565">Carbon</option><option value="50823">CEMCS Microfinance Bank</option><option value="50171">Chanelle Microfinance Bank Limited</option><option value="023">Citibank Nigeria</option><option value="50204">Corestep MFB</option><option value="559">Coronation Merchant Bank</option><option value="51297">Crescent MFB</option><option value="50162">Dot Microfinance Bank</option><option value="050">Ecobank Nigeria</option><option value="50263">Ekimogun MFB</option><option value="098">Ekondo Microfinance Bank</option><option value="50126">Eyowo</option><option value="51318">Fairmoney Microfinance Bank</option><option value="070">Fidelity Bank</option><option value="51314">Firmus MFB</option><option value="011">First Bank of Nigeria</option><option value="214">First City Monument Bank</option><option value="107">FirstTrust Mortgage Bank Nigeria</option><option value="501">FSDH Merchant Bank Limited</option><option value="812">Gateway Mortgage Bank LTD</option><option value="00103">Globus Bank</option><option value="100022">GoMoney</option><option value="50739">Goodnews Microfinance Bank</option><option value="562">Greenwich Merchant Bank</option><option value="058">Guaranty Trust Bank</option><option value="51251">Hackman Microfinance Bank</option><option value="50383">Hasal Microfinance Bank</option><option value="030">Heritage Bank</option><option value="120002">HopePSB</option><option value="51244">Ibile Microfinance Bank</option><option value="50439">Ikoyi Osun MFB</option><option value="50442">Ilaro Poly Microfinance Bank</option><option value="50457">Infinity MFB</option><option value="301">Jaiz Bank</option><option value="50502">Kadpoly MFB</option><option value="082">Keystone Bank</option><option value="50200">Kredi Money MFB LTD</option><option value="50211">Kuda Bank</option><option value="90052">Lagos Building Investment Company Plc.</option><option value="50549">Links MFB</option><option value="031">Living Trust Mortgage Bank</option><option value="303">Lotus Bank</option><option value="50563">Mayfair MFB</option><option value="50304">Mint MFB</option><option value="120003">MTN Momo PSB</option><option value="100002">Paga</option><option value="999991">PalmPay</option><option value="104">Parallex Bank</option><option value="311">Parkway - ReadyCash</option><option value="999992">Paycom</option><option value="51146">Personal Trust MFB</option><option value="50746">Petra Mircofinance Bank Plc</option><option value="076">Polaris Bank</option><option value="50864">Polyunwana MFB</option><option value="105">PremiumTrust Bank</option><option value="101">Providus Bank</option><option value="51293">QuickFund MFB</option><option value="502">Rand Merchant Bank</option><option value="90067">Refuge Mortgage Bank</option><option value="50767">ROCKSHIELD MICROFINANCE BANK</option><option value="125">Rubies MFB</option><option value="51113">Safe Haven MFB</option><option value="951113">Safe Haven Microfinance Bank Limited</option><option value="50582">Shield MFB</option><option value="50800">Solid Rock MFB</option><option value="51310">Sparkle Microfinance Bank</option><option value="221">Stanbic IBTC Bank</option><option value="068">Standard Chartered Bank</option><option value="51253">Stellas MFB</option><option value="232">Sterling Bank</option><option value="100">Suntrust Bank</option><option value="50968">Supreme MFB</option><option value="302">TAJ Bank</option><option value="090560">Tanadi Microfinance Bank</option><option value="51269">Tangerine Money</option><option value="51211">TCF MFB</option><option value="102">Titan Bank</option><option value="100039">Titan Paystack</option><option value="MFB51322">Uhuru MFB</option><option value="50870">Unaab Microfinance Bank Limited</option><option value="50871">Unical MFB</option><option value="51316">Unilag Microfinance Bank</option><option value="032">Union Bank of Nigeria</option><option value="033">United Bank For Africa</option><option value="215">Unity Bank</option><option value="566">VFD Microfinance Bank Limited</option><option value="035">Wema Bank</option><option value="057">Zenith Bank</option><option value="057">Zenith Bank</option></select>
+            </div>
+            <div class="mini">
+                <label for="account">account number</label>
+                <input type="text" placeholder="Enter Account Number" value="" id="accNum">
+            </div>
+            <div class="mini">
+                <label for="account">account holder</label>
+                <input type="text" value="" id="accName">
+                <input type="text" hidden value="">
+            </div>
+            <div class="mini">
+                <input type="submit" value="Add Beneficiary" onclick="addBeneficiary()">
+            </div>
+        </div>
+</body>
+<script>
+    var cont = document.getElementById("cont");
+    var pop1 = document.getElementById("pop1");
+    var pop2 = document.getElementById("pop2");
+    var add = document.getElementById("add"); 
+    var addBene = document.getElementById("addBene")
+    
+  
+
+      function getBeneficiary(){ 
+        var bene = document.createElement("div"); 
+            bene.className = "bene-info";
+            var i,j;
+            var flexArr = new Array(3)
+            var pArr = new Array(2)
+            for(i = 0; i < flexArr.length; ++i){ 
+                flexArr[i] = document.createElement("div"); 
+                flexArr[i].className = "flex";
+                for(j = 0; j < pArr.length; ++j){ 
+                    pArr[j] = document.createElement("p");
+                    pArr[j].innerHTML = Bankarr[i][j]
+                    flexArr[i].append(pArr[j])
+                }   
+                
+                bene.append(flexArr[i]);
+            }
+            addBene.appendChild(bene)
+      }
+      var Bankarr;
+      function addBeneficiary(){
+            Bankarr  =[
+            [
+                "account name",
+                document.getElementById("accName").value.split(" ")[0] + " " + document.getElementById("accName").value.split(" ")[1].charAt(0) 
+            ],
+            [ 
+                "account number",
+                document.getElementById("accNum").value
+
+            ],
+            [ 
+                "bank name",
+                document.getElementById("banks").options[document.getElementById("banks").selectedIndex].text
+
+            ]
+      ]
+            getBeneficiary()
+      }
+      function toNormal(){ 
+        // document.write("hello world")
+        pop1.style.display = "none";
+        pop2.style.display = "none";
+        cont.style.filter = "blur(0px)";
+      }
+      function display() {
+            pop1.style.display = "block";
+            pop2.style.display = "block";
+            cont.style.filter = "blur(5px)";
+      }
+ 
+    var a = document.getElementsByClassName("nav");
+    var prof = document.getElementsByClassName("prof");
+    var move = document.getElementById("move");
+    function navigate(){ 
+        var counter;
+        for(counter = 0; counter < a.length; ++counter){ 
+                if(counter == 0){ 
+                    a[counter].addEventListener("click", function(){ 
+                    prof[0].style.display = "flex";
+                    prof[1].style.display="none"  
+                    move.style.left = "0"
+                    })
+                }
+                else if(counter == 1){ 
+                    a[counter].addEventListener("click", function(){ 
+                    prof[1].style.display = "block";
+                    prof[0].style.display="none"  
+                    move.style.left = "100px"
+                    }) 
+                }
+            
+        }
+    }
+ 
+var xthtml = new XMLHttpRequest()
+xthtml.onload = function(){ 
+    xthtml.responseText
+}
+
+    navigate();
+</script>
+<script src="../dashboard/dash.js"></script>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../bootstrap-icons/bootstrap-icons.css">
+    <link rel="stylesheet" href="dash.css">
+    <title>dashboard</title>
+</head>
+<style>
+    /* .no-data{ 
+        top: 90%;
+        width: 100%;
+        position: relative;
+        display: block;
+    } */
+    
+</style>
+<body>
+    <div class="container">
+        <nav class="top-nav" id="topNav" >
+            <span class="bi bi-list" id="showNav"></span>
+            <span class="bi bi-moon-fill" id="theme"></span>
+            <h1> <span class="bi bi-bell-fill showNoti" id="showNoti"> <div id="notification">0<sup></sup></div></span> david attah</h1>
+
+            
+
+            <div class="notifications" id="noti">
+                <header>notifications</header> 
+                <p><span class="bi bi-trash-fill"></span> <br> no new items</p>
+                
+            </div>
+        </nav>
+        <div class="side-nav dark-theme-top-side" id="sideNav">
+            <header> <p>smart traders</p> </header>
+            <ul>
+                <li style="background-color: rgb(118, 192, 118);"><a href="../dashboard/index.html" style="color: white;"><span class="bi bi-grid"></span> dashboard</a></li>
+                <li><a href="../transactions/index.html"><span class="bi bi-graph-up"></span> transactions</a></li>
+                <li><a href="../products/index.html"><span class="bi bi-cart-fill"></span> products</a></li>
+                <li><a href="../settings/index.html"><span class="bi bi-plug"></span> settings</a></li>
+            </ul>
+        </div>
+        <main id="main" class="dark-theme-main">
+            <h1>hello, david attah</h1>
+            <div class="bal-card">
+                <img src="../images/nig.svg" alt="">
+                <p>availabe balance:</p>
+                <p>NGN <span id="demo">*** *** ***</span> <span class="bi bi-eye-fill" id="hide"></span></p>
+                <form action="/blog.html">
+                    <input type="submit" value="withdraw">
+                </form>
+            </div>
+
+            <div class="flex">
+                <div class="mini cards">
+                    <img src="../images/img17.png" alt="giftcards">
+                    <p>sell giftcards</p>
+                </div>
+                <div class="mini cards">
+                    <img src="../images/img8.png" alt="airtime">
+                    <p>buy airtimes</p>
+                </div>
+                <div class="mini cards">
+                    <img src="../images/img9.png" alt="pay bills">
+                    <p>pay bills</p>
+                </div>
+                <div class="mini cards">
+                    <img src="../images/img2.png" alt="rate calculator">
+                    <p>rate calculator</p>
+                </div>
+            </div>
+            <div class="table">
+                <header>recent transactions</header>
+                <table>
+                    <tr>
+                        <th>transaction iD</th>
+                        <th>type</th>
+                        <th>status</th>
+                        <th>amount</th>
+                        <th>date</th>
+                        <th>action</th>
+                    </tr>
+                    <!--   -->
+                </table>
+                <!-- <button id="toTransaction">see more</button> -->
+            </div>
+            <div class="no-data" id="noData">
+                <p><span class="bi bi-inbox"></span> <br> no data  </p>
+                
+            </div>
+            
+        </main>
+    </div>
+</body>
+<script src="dash.js"></script>
+</html>

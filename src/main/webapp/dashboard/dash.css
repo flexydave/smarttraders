@@ -1,0 +1,454 @@
+*{ 
+    box-sizing: border-box;
+    font-family: 'Segoe UI';
+    transition: all 0.5s ease-in-out;
+    animation: load 0.5s 1 linear;   
+}
+
+
+
+@keyframes load {
+    from{ 
+        opacity: 0;
+    }to{ 
+        opacity: 1;
+    }
+}
+
+body,html{ 
+    padding: 0;
+    margin: 0;
+}
+.container{ 
+    width: 100%;
+    position: relative;
+    margin: 0 auto;
+}
+.top-nav{ 
+    width: 80%;
+    position: fixed;
+    padding: 10px;
+    box-shadow: 0 3px 10px rgb(216, 208, 208);
+    z-index: 1;
+    background-color: white;
+    
+    right: 0;
+    /* color: white; */
+
+}
+.top-nav > .bi-list{ 
+    font-size: 30px;
+    color: rgb(118, 192, 118);
+    position: absolute;
+    left: 5px;
+    cursor: pointer;
+    display: none;
+}
+
+.top-nav > .bi-moon-fill, .bi-brightness-high-fill{ 
+    
+    font-size: 25px;
+    position: absolute;
+    right: 150px;
+    top: 20%;
+    cursor: pointer;
+}
+.top-nav > .notifications{ 
+    background-color: white;
+    text-align: center;
+    border-radius: 10px;
+    position: absolute;
+    right: 5px;
+    top: 75px;
+    width: 30%;
+    height: 50vh;
+    box-shadow: 0 3px 10px rgb(216, 208, 208);
+    animation: fade 0.5s 1 linear;
+    display: none;
+    /* display: block; */
+}
+
+@keyframes fade {
+    from{ 
+        opacity: 0;
+        
+        
+    }
+    to{ 
+        opacity: 1;
+       
+    }
+}
+.top-nav > .notifications > header{ 
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 2px solid whitesmoke;
+    text-transform: capitalize;
+    padding: 15px 0;
+}
+.top-nav > .notifications > p{ 
+    position: relative;
+    top: 25%;
+    color: green;
+    text-transform: capitalize;
+}
+.top-nav > .notifications > p > span{ 
+    font-size: 30px;
+    color: black;
+    
+}
+.top-nav > h1{ 
+    float: right;
+    text-transform: capitalize;
+    font-size: 16px;
+    position: relative;
+    cursor: pointer;
+    font-weight:400;
+}
+.top-nav > h1 > span{ 
+    font-size: 25px;
+    position: absolute;
+    left: -40px;
+    top: -5px;
+    color: grey;
+}
+.top-nav > h1 > span > #notification{ 
+    width: 50%;
+    height: 50%;  
+    border-radius: 100%;
+    background-color: red;
+    color: white;
+    font-size: 10px;
+    position: relative;
+    top: -32px;
+    left: 15px;
+    text-align: center;
+    text-overflow:clip;
+    /* overflow: hidden; */
+    
+}
+
+.side-nav{ 
+    background-color: white;
+    /* background-color: #1f1f1f; */
+    padding: 20px 70px 20px 20px;
+    position: fixed;
+    width: 20%;
+    height: 100vh;
+    z-index: 1;
+    /* color: white; */
+}
+.side-nav > header{ 
+    font-size: 20px;
+}
+
+.side-nav > ul{ 
+    list-style-type: none;
+    padding: 0;
+    text-transform: capitalize;
+    padding-top: 30px;
+    width: 100%;
+
+}
+.side-nav > ul li{ 
+    padding: 10px 20px;
+    border-radius: 15px;
+    margin: 10px 0;
+    position: relative;
+    width: 100%;
+    cursor: pointer;
+    font-weight: 500;
+    padding: 10px;
+    
+}
+
+.side-nav > ul li:hover{ 
+    background-color: rgb(118, 192, 118);
+}
+
+
+.side-nav > ul li span{ 
+    position: relative;
+    font-size: 20px;
+    
+}
+
+.side-nav > ul li a{ 
+    color: black;
+    /* color: white; */
+    text-decoration: none;
+    position: relative;
+    left: 0;
+    
+}
+.side-nav > ul li:hover a{ 
+    left: 20px;
+    color: white;
+}
+
+@media all and (max-width:1200px){ 
+    .side-nav > ul li{ 
+        width: 100%;
+        margin: 10px 0;
+    }
+    .side-nav{ 
+        width: 30%;
+        /* left: -400px; */
+    }
+    .top-nav{ 
+        width: 70%;
+        /* width: 100%; */
+    }
+    .top-nav > .bi-list{ 
+        display: block;
+        
+    }
+}
+@media all and (max-width:880px){ 
+    .side-nav{ 
+        left: -100%;
+    }
+    .top-nav { 
+        width: 100%;
+    }
+    .top-nav > .bi-list{ 
+        left: 0;
+    }
+    .top-nav > .notifications{ 
+        width: 70%;
+    }
+}
+
+.container > main{ 
+    
+    padding: 2% 10%;
+    width: 80%;
+    position: absolute;
+    /* height: 100vh; */
+    left: 20%;
+    top: 65px;
+    background-color: transparent;
+    background-color: rgb(243, 242, 242);
+    /* background-color: #161616; */
+   /* color: white; */
+}
+
+
+.container > main > h1{ 
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 20px;
+}
+
+.container > main > .bal-card{ 
+    width: 50%;
+    margin: 5% auto;
+    background-color: green;
+    padding: 15px;
+    background-image: url("../images/bal-card.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 15px;
+    text-align: center;
+    position: relative;
+    color: white;
+    text-transform: capitalize;
+}
+.container > main > .bal-card > img{ 
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+.container > main > .bal-card > p:nth-child(3){ 
+    font-size: 30px;
+    font-weight: bold;
+    position: relative;
+    top: -30px;
+}
+.container > main > .bal-card > p > span:nth-child(2){ 
+    position: relative;
+    left: 10px;
+    cursor: pointer;
+}
+.container > main > .bal-card > form{ 
+    top: -30px;
+    position: relative;
+}
+.container > main > .bal-card > form > input{ 
+    background-color: black;
+    color: white;
+    padding: 10px 25px;
+    text-transform: capitalize;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+}
+.container > main > .bal-card > form > input:hover{ 
+    background-color: rgb(3, 161, 3);
+    box-shadow: 0 3px 10px rgb(6, 141, 6);
+}
+
+
+main > .flex{ 
+    display: flex;
+    /* justify-content: space-between; */
+    margin: 10% auto;
+    width: 100%;
+    overflow-x: scroll;
+    scroll-snap-type: mandatory;
+    scroll-snap-align: start;
+    
+}
+main > .flex::-webkit-scrollbar{ 
+    display: none;
+}
+
+main > .flex > .mini{ 
+    background-color: white;
+    display: flex;
+    padding: 7px;
+    width: 100%;
+    margin: 0 10px;
+    border-radius: 10px;
+    text-transform: capitalize;
+    font-weight: bold;
+    cursor: pointer;
+    /* color: black; */
+}
+main > .flex > .mini > img{ 
+    width: 50px;
+    padding: 10px;
+    background-color: rgb(206, 199, 199);
+    border-radius: 100%;
+}
+main > .flex > .mini > p{ 
+    position: relative;
+    left: 10px;
+}
+main > .flex > .mini:hover{ 
+    box-shadow: 0 3px 10px rgb(216, 208, 208);
+}
+.table{ 
+    width: 100%;  
+    position: relative;
+    overflow-x: scroll;
+    scroll-snap-type: mandatory;
+    scroll-snap-align: start;
+}
+ .no-data{ 
+    width: 75%;
+    height: 30vh;
+    background-color: white;
+    text-align: center;
+    display: block;
+    position: absolute;
+    top: 43%;
+    /* z-index: -1; */
+    display: none;
+}
+.no-data > p{ 
+    position: relative;
+    top: 30%;
+    text-transform: uppercase;
+   
+}
+.no-data > p > span{ 
+    font-size: 40px;
+}
+
+.table::-webkit-scrollbar{ 
+    display: none;
+}
+  table{ 
+    width: 100%;
+    text-transform: capitalize;
+    background-color: white;
+    margin: 0 auto;
+    border-radius: 5px;
+    position: relative;
+    border-collapse: collapse;
+    color: black;
+}
+
+
+ td, th{ 
+    text-align: left;
+    border-bottom: 1px solid rgb(230, 227, 227);
+    border-right: 1px solid rgb(243, 241, 241);
+    
+    padding: 13px;
+}
+td{ 
+    text-transform: uppercase;
+}
+
+tr:nth-child(even):hover{ 
+    background-color: #f8f8f8;
+}
+
+
+main > .table > header{ 
+    text-transform: capitalize;
+    font-weight: bold;
+    margin: 5% 0%;
+}
+
+main > .table > button{ 
+    padding: 10px;
+    float: right;
+    margin: 3% auto;
+    width: 20%;
+    color: white;
+    background-color: green;
+    border: none;
+    border-radius: 5px;
+    text-transform: capitalize;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+@media all and (max-width:1200px){ 
+    .container > main > .bal-card{ 
+        width: 70%;
+        
+    }
+    
+    
+}
+@media all and (max-width:880px){ 
+    .container > main{ 
+        left: 0%;
+        width: 100%;
+        height: 100vh;
+    }
+    .container > main > .bal-card{ 
+        width: 100%;
+    }
+    main > .flex { 
+        width: 60%;
+        /* flex-direction: column; */
+    }
+    main > .flex > .mini{ 
+       padding:5px 50px 5px 5px;
+       width: 100%;
+    }
+    main > .flex > .mini > img{ 
+        /* padding: 10px; */
+    }
+    main > .table > button{ 
+        width: 100%;
+    }
+    
+}
+
+
+/* .dark-theme-top-side{ 
+    background-color: #1f1f1f;
+    box-shadow:none;
+}
+
+main.dark-theme-main{ 
+    background-color: #161616;
+    box-shadow:none;
+} */

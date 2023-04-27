@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="bootstrap-icons/bootstrap-icons.css">
+    <link rel="stylesheet" href="privacy.css">
+    <title>blog</title>
+    <style>
+        .container{ 
+            background-color: aliceblue;
+           
+        }
+        
+        .container > .home >main > img:nth-child(1){ 
+            width: 200px;
+            top: 0;
+        }
+        .container > .home >main > img:nth-child(2){ 
+            width: 300px;
+        }
+        .container > .home >main >p{ 
+            color: black;
+        }
+        .container > .home >main >h1{ 
+            color: rgb(46, 122, 46);
+        }
+        .container > .flex{ 
+            background-color: white;
+            width: 100%;
+            margin: 15% auto;
+            display: flex;
+            justify-content: space-between;
+            box-shadow: 5px 2px 5px rgb(231, 231, 231);
+        }
+        .container > .flex > .mini{ 
+            display: flex;
+            width: 100%;
+            padding: 0 5%;
+        }
+        .container > .flex > .mini > ul{ 
+            list-style-type: none;
+            /* display: flex; */
+            width: 100%;
+            
+        }
+        .container > .flex > .mini > ul > li{ 
+            padding: 10px;
+            
+            color: green;
+            border-radius: 5px;
+            margin: 0 2%;
+            text-transform: capitalize;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            float: right;
+        }
+        .container > .flex > .mini > input{ 
+            width: 100%;
+            margin: 10px 10px;
+            border: none;
+            outline: none;
+            padding: 10px;
+            background-color: aliceblue;
+            padding: 0 10px;
+        }
+        .container > .flex > .mini > input[type = "submit"]{ 
+            width: 20%;
+            background-color: rgb(17, 167, 17);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        @media screen and (max-width:1000px) {
+            .container > .flex{ 
+                flex-direction: column;
+            }
+            .container > .flex > .mini > input{ 
+                padding: 10px;
+            }
+            
+            .container > .flex > .mini > ul{ 
+                width: 100%;
+            }
+            .container > .flex > .mini > ul > li{ 
+               float: left;
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <section class="home">
+            <nav>
+                <div class="mini">
+                    <p><a href="index.html">SMART TRADERS</a></p>
+                </div>
+                <div class="mini" id="nav">
+                    <ul>
+                        <li><a href="blog.html" style="color: green;">blog</a></li>
+                        <li><a href="privacy.html">privacy policy</a></li>
+                        <li><a href="faqs.html">FAQs</a></li>
+                        <li><a href="terms.html">terms of use</a></li>
+                        <li><a href="login.html">get started</a></li>
+                    </ul>
+                </div>
+                <span class="bi bi-list" id="listIcon"></span>
+            </nav>
+            <main>
+                <img src="images/img13.svg" alt="img" srcset="">
+                <img src="images/img12.svg" alt="img" srcset="">
+                <h1>The Smart Traders Blog</h1>
+                <p>Stories from the easiest and most trusted place to <br> sell Gift cards</p>     
+            </main>
+        </section>
+           
+        <div class="flex">
+            <div class="mini">
+                 <ul>
+                    <li>recent</li>
+                    <li>product updates</li>
+                    <li>marketing</li>
+                    <li >company news</li>
+                 </ul>
+            </div>
+            <div class="mini">
+                <input type="text" placeholder="search keyword">
+                <input type="submit" value="search">
+            </div>
+        </div>
+        <section class="footer">
+            <div class="flex">
+                <div class="mini">
+                    <b>smart traders</b>
+                    <b>&copy; 2023 Smart Traders . All rights reserved.</b>
+                </div>
+                <div class="mini">
+                    <b><a href="privacy.html">Privacy Policy</a></b>
+                    <b><a href="terms.html">Terms of Use</a></b>
+                </div>
+                <div class="mini">
+                    <a href="#"><b class="bi bi-instagram"></b></a>
+                    <a href="#"><b class="bi bi-facebook"></b></a>
+                    <a href="#"><b class="bi bi-twitter"></b></a>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+<script src="index.js"></script>
+</html>

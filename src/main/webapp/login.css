@@ -1,0 +1,118 @@
+.container{ 
+    background-color: rgb(247 247 252);
+    position: relative;
+    
+    /* height: 100vh; */
+}
+
+.container > img{ 
+    position: absolute;
+    width: 30%;
+    top: 150px;
+    
+    
+}
+
+@keyframes slide {
+    from{ 
+        top: 0;
+        opacity: 0;
+    }to{ 
+        top: 100px;
+        opacity: 1;
+    }
+}
+.container > img:nth-child(2){ 
+    right: 105px;
+    width: 100px;
+    animation: slide 1s 1;
+}
+.container > img:nth-child(3){ 
+    right: 25px;
+    top: 450px;
+    width: 100px;
+    animation: slide2 1s 1;
+}
+
+.container > .flex{ 
+    width: 70%;
+    display: flex;
+    margin: 0% auto;
+}
+.container> .flex > img{ 
+    width: 50%;
+}
+.container>  .flex > form{ 
+    margin: 0% auto;
+    width: 100%;
+    background-color: white;
+    border-radius: 15px;
+    font-size: 14px;
+    text-transform: capitalize;
+    padding: 2% 3%;
+}
+.container > .flex > form > .header{ 
+    text-align: center;
+}
+.container>  .flex > form > .header > p > a{ 
+    color: green;
+}
+.container > .flex > form > .header > h1{ 
+    font-size: 16px;
+}
+
+.container > .flex > form > .flex > .mini > input,select,input[type = "tel"]{ 
+    width: 100%;
+    padding: 15px 50px 15px 15px;
+    border-radius: 5px;
+    border: 1px solid black;
+    outline: none;
+    margin: 2% auto;
+}
+
+
+.container>  .flex > form > .flex > .mini > label{ 
+    color: grey;
+}
+.container>  .flex > form > .flex > .mini{ 
+    position: relative;
+}
+
+.container >  .flex > form > .flex > .mini > span{ 
+    position: absolute;
+    right: 5%;
+    font-size: 20px;
+    top: 35%;
+    color: grey;
+    cursor: pointer;
+}
+.container > .flex > form > .flex{ 
+    width: 100%;
+    margin: 5% auto;
+}
+.container > .flex > form > .flex > .mini > input[type = "submit"]{ 
+    background-color: green;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+@media all and (max-width:1080px){ 
+    .container > img:nth-child(2),.container > img:nth-child(3){ 
+        display: none;
+    }
+    
+    .container > .flex{ 
+        width: 90%;
+    }
+    
+}
+
+@media all and (max-width:880px){ 
+    .container > .flex { 
+        flex-direction: column;
+    }
+    .container > .flex > img{ 
+        width: 100%;
+    }
+}
